@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -54,11 +53,19 @@ public class Controller {
     public List<Pincode> findByPincode(@PathVariable int pincode){
         return pincodeRepository.findByPincode(pincode);
     }
+    
+//    @GetMapping("/getPinCode")
+//    public List<PincodeMaster> findByPincode(@RequestBody PincodeMaster pincodeMaster){
+//    	int pincodeString = pincodeMaster.getPincode();
+//        return pincodeRepository.findByPincode(pincodeString);
+//    }
 
     @GetMapping("/state/{state}")
     public List<State> findByState(@PathVariable String state){
         return stateRepository.findByState(state);
     }
+    
+    
     
     
     
